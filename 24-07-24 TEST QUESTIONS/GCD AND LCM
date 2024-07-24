@@ -1,0 +1,35 @@
+public class LCMandGCD {
+    public static void main(String[] args) {
+        int n = 2;
+        int[] numbers = {16, 20};
+        
+        int lcm = findLCM(numbers);
+        int gcd = findGCD(numbers);
+        
+        System.out.println("LCM = " + lcm);
+        System.out.println("GCD = " + gcd);
+    }
+
+    public static int findLCM(int[] numbers) {
+        int lcm = numbers[0];
+        for (int i = 1; i < numbers.length; i++) {
+            lcm = (lcm * numbers[i]) / findGCD(new int[]{lcm, numbers[i]});
+        }
+        return lcm;
+    }
+
+    public static int findGCD(int[] numbers) {
+        int gcd = numbers[0];
+        for (int i = 1; i < numbers.length; i++) {
+            gcd = findGCDUtil(gcd, numbers[i]);
+        }
+        return gcd;
+    }
+
+    public static int findGCDUtil(int a, int b) {
+        if (b == 0) {
+            return a;
+        }
+        return findGCDUtil(b, a % b);
+    }
+}
