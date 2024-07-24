@@ -1,0 +1,14 @@
+public class FibonacciSeries {
+    public static void main(String[] args) {
+        int n = 6, firstTerm = 0, secondTerm = 1;
+
+        System.out.print(firstTerm + "\t" + secondTerm);
+
+        for (int i = 2; i < n; i++) {
+            int nextTerm = firstTerm + secondTerm;
+            System.out.print("\t" + nextTerm);
+            firstTerm = secondTerm;
+            secondTerm = nextTerm;
+        }
+    }
+}
