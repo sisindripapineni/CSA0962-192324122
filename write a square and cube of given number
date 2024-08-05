@@ -1,0 +1,11 @@
+public class MathOperations {
+    public static void main(String[] args) {
+        double input = 0.6;
+        
+        double square = Math.pow(input, 2);
+        double cube = Math.pow(input, 3);
+        
+        System.out.println("Square of " + input + " is: " + square);
+        System.out.println("Cube of " + input + " is: " + cube);
+    }
+}
